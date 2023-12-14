@@ -1,0 +1,13 @@
+add
+
+POST _opendistro/_ism/add/wazuh*
+{
+  "policy_id": "wazuh-index-state-policy"
+}
+
+update
+
+POST _opendistro/_ism/change_policy/wazuh*
+{
+  "policy_id": "wazuh-index-state-policy"
+}
