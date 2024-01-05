@@ -1,0 +1,7 @@
+curl -XGET localhost:9200/_cluster/allocation/explain?pretty
+
+curl -XPUT ' localhost:9200/wazuh-alerts-*/_settings' -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": "0" } }'
+
+watch -n0 'curl -s localhost:9200/_cluster/health?pretty | grep "active_shards_percent"'
+
+curl -X PUT localhost:9200/_cluster/settings -H "Content-Type: application/json" -d '{ "persistent": { "cluster.max_shards_per_node": "3000" } }'
