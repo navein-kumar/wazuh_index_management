@@ -5,3 +5,4 @@ curl -XPUT ' localhost:9200/wazuh-alerts-*/_settings' -H 'Content-Type: applicat
 watch -n0 'curl -s localhost:9200/_cluster/health?pretty | grep "active_shards_percent"'
 
 curl -X PUT localhost:9200/_cluster/settings -H "Content-Type: application/json" -d '{ "persistent": { "cluster.max_shards_per_node": "3000" } }'
+
