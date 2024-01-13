@@ -2,8 +2,8 @@ PUT /_template/wazuh-custom
 {
   "order": 1,
   "index_patterns": [
-    "wazuh-alerts-4.x-*",
-    "wazuh-archives-4.x-*",
+    "wazuh-alerts-*",
+    "wazuh-archives-*",
     "wazuh-monitoring-*",
     "wazuh-statistics-*"
   ],
