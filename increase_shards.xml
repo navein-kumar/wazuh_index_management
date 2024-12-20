@@ -1,6 +1,6 @@
 curl -XGET -k -u "<INDEXER_USERNAME>:<INDEXER_PASSWORD>" localhost:9200/_cluster/allocation/explain?pretty
 
-curl -k -u "<INDEXER_USERNAME>:<INDEXER_PASSWORD>" -XPUT ' localhost:9200/wazuh-alerts-*/_settings' -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": "0" } }'
+curl -k -u "<INDEXER_USERNAME>:<INDEXER_PASSWORD>" -XPUT 'https://127.0.0.1:9200/wazuh-alerts-*/_settings' -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": "0" } }'
 
 watch -n0 'curl -s localhost:9200/_cluster/health?pretty | grep "active_shards_percent"'
 
