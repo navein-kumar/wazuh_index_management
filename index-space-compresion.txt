@@ -5,3 +5,18 @@ curl -X PUT "localhost:9200/_template/wazuh-alerts-template" -H 'Content-Type: a
     "index.codec": "best_compression"
   }
 }'
+---
+
+# Close the index
+   curl -X POST "localhost:9200/wazuh-alerts-4.x-2025.09.15/_close"
+   
+   # Change the setting
+   curl -X PUT "localhost:9200/wazuh-alerts-4.x-2025.09.15/_settings" -H 'Content-Type: application/json' -d'
+   {
+     "index": {
+       "codec": "best_compression"
+     }
+   }'
+   
+   # Reopen the index
+   curl -X POST "localhost:9200/wazuh-alerts-4.x-2025.09.15/_open"
