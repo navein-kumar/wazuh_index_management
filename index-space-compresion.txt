@@ -1,3 +1,5 @@
+--new index compresio---copy paste dev tools---
+
 curl -X PUT "localhost:9200/_template/wazuh-alerts-template" -H 'Content-Type: application/json' -d'
 {
   "index_patterns": ["wazuh-alerts*"],
@@ -5,7 +7,8 @@ curl -X PUT "localhost:9200/_template/wazuh-alerts-template" -H 'Content-Type: a
     "index.codec": "best_compression"
   }
 }'
----
+--old index compresio---
+
 
 # Close the index
    curl -X POST "localhost:9200/wazuh-alerts-4.x-2025.09.15/_close"
