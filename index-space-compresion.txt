@@ -1,0 +1,7 @@
+curl -X PUT "localhost:9200/_template/wazuh-alerts-template" -H 'Content-Type: application/json' -d'
+{
+  "index_patterns": ["wazuh-alerts*"],
+  "settings": {
+    "index.codec": "best_compression"
+  }
+}'
