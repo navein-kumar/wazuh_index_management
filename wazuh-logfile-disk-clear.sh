@@ -7,7 +7,14 @@
 
 #manager ossecc.conf add below line global section to rotate file
 <global>
+        <!-- alert.json yes  -->
     <jsonout_output>yes</jsonout_output>
+            <!-- alert.log no -->
+       <alerts_log>no</alerts_log>
+        <!-- archive no -->
+    <logall>no</logall>
+    <logall_json>no</logall_json>
+    
         <!-- Rotate when file reaches 5GB -->
     <max_output_size>5120M</max_output_size>
 <global>
