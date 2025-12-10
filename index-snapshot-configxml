@@ -1,0 +1,13 @@
+#create directory
+mkdir /wazuh/snapshot
+chmod 777 -R  /wazuh/snapshot
+
+# add snaphost config
+vim /etc/wauh-indexer/opensearch.yaml
+#add blow line in last 
+path.repo: ["/wazuh/snapshot"]
+
+#restart
+systemctl restart wazuh-indexer
+
+#add config in ui -> reposity and path
